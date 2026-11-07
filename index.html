@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Fortune Tiger — Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-badge">DEMO · Fichas fictícias · Sem dinheiro real</div>
+
+<div class="phone">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <span class="game-title">Fortune Tiger</span>
+    <span class="clock" id="clock">20:43:10</span>
+  </header>
+
+  <!-- Game stage -->
+  <main class="stage">
+
+    <!-- Pagoda arch with tiger medallion -->
+    <div class="arch">
+      <div class="roof"></div>
+      <div class="medallion">
+        <div class="tiger-portrait">🐯</div>
+        <div class="banner" id="holdBanner">福</div>
+      </div>
+      <div class="lanterns">
+        <span class="lantern left"></span>
+        <span class="lantern right"></span>
+      </div>
+    </div>
+
+    <!-- Reels frame -->
+    <div class="reel-frame">
+      <div class="side-numbers left">
+        <span>4</span><span>2</span><span>3</span>
+      </div>
+
+      <div class="reels" id="reels">
+        <!-- 3 columns x 3 rows injected by JS -->
+      </div>
+
+      <div class="side-numbers right">
+        <span>5</span><span>5</span><span>4</span>
+      </div>
+
+      <div class="win-overlay" id="winOverlay"></div>
+    </div>
+
+    <!-- Message ticker -->
+    <div class="message-bar">
+      <span id="messageText">Boa sorte!</span>
+    </div>
+
+    <!-- Free spins meter -->
+    <div class="meter-wrap" id="meterWrap">
+      <span class="meter-label">Cidade Tigre da Sorte</span>
+      <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+      <span class="meter-count"><span id="meterCount">0</span>/3</span>
+    </div>
+
+  </main>
+
+  <!-- Bottom control bar -->
+  <footer class="controls">
+    <div class="row-balances">
+      <button class="pill icon-pill" id="menuBtn" title="Menu">☰</button>
+      <div class="pill balance-pill">
+        <span class="pill-label">Saldo</span>
+        <span class="pill-value" id="balanceValue">R$0,00</span>
+      </div>
+      <div class="pg-badge">PG</div>
+      <div class="pill bet-pill" id="openBetModal">
+        <span class="pill-label">Aposta</span>
+        <span class="pill-value" id="betValue">R$4,00</span>
+      </div>
+      <button class="pill icon-pill" id="soundBtn" title="Som">🔊</button>
+    </div>
+
+    <div class="row-actions">
+      <button class="round-btn turbo-btn" id="turboBtn" title="Turbo">⚡</button>
+      <button class="round-btn minus-btn" id="minusBtn">−</button>
+
+      <button class="spin-btn" id="spinBtn">
+        <span class="paw">🐾</span>
+      </button>
+
+      <button class="round-btn plus-btn" id="plusBtn">+</button>
+      <button class="round-btn auto-btn" id="autoBtn" title="Auto">⟳</button>
+    </div>
+  </footer>
+</div>
+
+<!-- Bet options modal -->
+<div class="modal-backdrop" id="betModalBackdrop">
+  <div class="modal">
+    <div class="modal-header">
+      <span>Opções de Aposta</span>
+      <button class="modal-close" id="closeBetModal">×</button>
+    </div>
+    <table class="bet-table">
+      <thead>
+        <tr><th>Valor de Aposta</th><th>Nível de Aposta</th><th>Aposta base</th><th>Montante de Aposta</th></tr>
+      </thead>
+      <tbody id="betTableBody"></tbody>
+    </table>
+    <div class="modal-actions">
+      <button class="btn-outline" id="maxBetBtn">Aposta Máxima</button>
+      <button class="btn-solid" id="confirmBetBtn">Confirmar</button>
+    </div>
+    <div class="row-balances modal-footer">
+      <div class="pill balance-pill"><span class="pill-label">Saldo</span><span class="pill-value" id="balanceValue2">R$0,00</span></div>
+      <div class="pg-badge">PG</div>
+      <div class="pill bet-pill"><span class="pill-label">Aposta</span><span class="pill-value" id="betValue2">R$4,00</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Free spins intro/outro banner -->
+<div class="fs-banner" id="fsBanner">
+  <div class="fs-banner-inner">
+    <div class="fs-title" id="fsTitle">RODADAS GRÁTIS</div>
+    <div class="fs-sub" id="fsSub"></div>
+  </div>
+</div>
+
+<!-- Big win popup -->
+<div class="bigwin" id="bigwin">
+  <div class="bigwin-label" id="bigwinLabel">GRANDE VITÓRIA</div>
+  <div class="bigwin-amount" id="bigwinAmount">R$0,00</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
